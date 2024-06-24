@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AR by Location</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-geo-coordinates@1.0.0/dist/aframe-geo-coordinates.min.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+
+        <a-entity gps-entity-place="latitude: -6.2800487; longitude: 106.7719805;">
+            <a-gltf-model src="#logo-maia" scale="5 5 5" position="0 0 0"></a-gltf-model>
+        </a-entity>
+
+        <a-camera gps-camera rotation-reader></a-camera>
+    </a-scene>
+
+    <a-assets>
+        <a-asset-item id="logo-maia" src="./assets/logo-maia.glb"></a-asset-item>
+    </a-assets>
+</body>
+
+</html>
